@@ -83,20 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "d82c",
-      "title": "test",
-      "type": "Full-Time",
-      "location": "asdfsd",
-      "description": "test dae",
-      "salary": "Under $50K",
-      "company": {
-        "name": "fasdf",
-        "description": "sdfd",
-        "contactEmail": "ffff@gmail.com",
-        "contactPhone": "kingmaker"
-      }
     }
   ]
 }
