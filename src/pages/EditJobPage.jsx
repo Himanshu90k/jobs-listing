@@ -1,37 +1,31 @@
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
-const AddJobPage = ( { addJobSubmit } ) => {
+const EditJobPage = ( { updateJobSubmit } ) => {
+
+    const job = useLoaderData();
 
     const initialValues = {
-      title: '',
-      type: 'Full-Time',
-      description: '',
-      salary: 'Under $50K',
-      location: '',
-      companyName: '',
-      companyDescription: '',
-      contactEmail: '',
-      contactPhone: '',
+      title: job.title,
+      type: job.type,
+      description: job.description,
+      salary: job.salary,
+      location: job.location,
+      companyName: job.company.name,
+      companyDescription: job.company.description,
+      contactEmail: job.company.contactEmail,
+      contactPhone: job.company.contactPhone,
       
     };
 
     const navigate = useNavigate();
 
-    const [ formData, setFormData ] = useState(initialValues);
-
-    const handleChange = (fieldName, newValue) => {
-      setFormData((prevState) => ({
-        ...prevState,
-        [fieldName]: newValue
-      }))
-    }
-
     const submitForm = (e) => {
       e.preventDefault();
       
-      const newJob = {
+      const updatedJob = {
+        id: job.id,
         title : formData.title,
         type : formData.type,
         location: formData.location,
@@ -45,22 +39,31 @@ const AddJobPage = ( { addJobSubmit } ) => {
         }
       }
 
-      addJobSubmit(newJob);
+      updateJobSubmit(updatedJob);
 
-      toast.success('Job Added Successfully');
+      toast.success('Job Updated Successfully');
 
-      return navigate('/jobs');
+      return navigate(`/jobs/${job.id}`);
 
     }
 
-    return (
+    const [ formData, setFormData ] = useState(initialValues);
+
+    const handleChange = (fieldName, newValue) => {
+      setFormData((prevState) => ({
+        ...prevState,
+        [fieldName]: newValue
+      }))
+    }
+
+    return(
     <section className="bg-indigo-50">
       <div className="container m-auto max-w-2xl py-24">
         <div
           className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
         >
           <form onSubmit={submitForm}>
-            <h2 className="text-3xl text-center font-semibold mb-6">Add Job</h2>
+            <h2 className="text-3xl text-center font-semibold mb-6">Update Job</h2>
 
             <div className="mb-4">
               <label htmlFor="type" className="block text-gray-700 font-bold mb-2"
@@ -230,14 +233,14 @@ const AddJobPage = ( { addJobSubmit } ) => {
                 className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Add Job
+                Update Job
               </button>
             </div>
           </form>
         </div>
       </div>
     </section>
-    );
+    )
 };
 
-export default AddJobPage;
+export default EditJobPage;
