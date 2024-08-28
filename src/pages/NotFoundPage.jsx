@@ -13,7 +13,7 @@ const NotFoundPage = () => {
         >Go Back
       </Link>
     </section>
-    )
+  )
 };
 
 export default NotFoundPage;

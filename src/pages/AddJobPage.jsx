@@ -8,7 +8,7 @@ const AddJobPage = ( { addJobSubmit } ) => {
       title: '',
       type: 'Full-Time',
       description: '',
-      salary: 'Under $50K',
+      salary: 'Under 1L',
       location: '',
       companyName: '',
       companyDescription: '',
@@ -126,22 +126,22 @@ const AddJobPage = ( { addJobSubmit } ) => {
                 value={formData.salary}
                 onChange={e => handleChange('salary', e.target.value)}
               >
-                <option value="Under $50K">Under $50K</option>
-                <option value="$50K - 60K">$50K - $60K</option>
-                <option value="$60K - 70K">$60K - $70K</option>
-                <option value="$70K - 80K">$70K - $80K</option>
-                <option value="$80K - 90K">$80K - $90K</option>
-                <option value="$90K - 100K">$90K - $100K</option>
-                <option value="$100K - 125K">$100K - $125K</option>
-                <option value="$125K - 150K">$125K - $150K</option>
-                <option value="$150K - 175K">$150K - $175K</option>
-                <option value="$175K - 200K">$175K - $200K</option>
-                <option value="Over $200K">Over $200K</option>
+                <option value="Under 1L">Under 1L</option>
+                <option value="1L - 2L">1L - 2L</option>
+                <option value="2L - 3L">2L - 3L</option>
+                <option value="3L - 4L">3L - 4L</option>
+                <option value="4L - 5L">4L - 5L</option>
+                <option value="5L - 6L">5L - 6L</option>
+                <option value="6L - 7L">6L - 7L</option>
+                <option value="7L - 8L">7L - 8L</option>
+                <option value="8L - 9L">8L - 9L</option>
+                <option value="10L - 11L">10L - 11L</option>
+                <option value="Over 11L">Over 11L</option>
               </select>
             </div>
 
             <div className='mb-4'>
-              <label className='block text-gray-700 font-bold mb-2'>
+              <label className='blocK text-gray-700 font-bold mb-2'>
                 Location
               </label>
               <input
