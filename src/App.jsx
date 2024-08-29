@@ -21,7 +21,7 @@ const App = () => {
     const res = await fetch('/api/jobs', {
       method: 'POST',
       headers: {
-        'content-type': '/application/json',
+        'content-type': 'application/json',
       },
       body: JSON.stringify(newJob),
     });
