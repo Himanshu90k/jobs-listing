@@ -25,7 +25,7 @@ const EditJobPage = ( { updateJobSubmit } ) => {
       e.preventDefault();
       
       const updatedJob = {
-        id: job.id,
+        _id: job._id,
         title : formData.title,
         type : formData.type,
         location: formData.location,
@@ -43,7 +43,7 @@ const EditJobPage = ( { updateJobSubmit } ) => {
 
       toast.success('Job Updated Successfully');
 
-      return navigate(`/jobs/${job.id}`);
+      return navigate(`/jobs/${job._id}`);
 
     }
 
