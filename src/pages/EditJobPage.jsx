@@ -93,7 +93,7 @@ const EditJobPage = ( { updateJobSubmit } ) => {
                 id="title"
                 name="title"
                 className="border rounded w-full py-2 px-3 mb-2"
-                placeholder="eg. Beautiful Apartment In Miami"
+                placeholder="eg. React Developer"
                 required
                 value={formData.title}
                 onChange={e => handleChange('title', e.target.value)}
