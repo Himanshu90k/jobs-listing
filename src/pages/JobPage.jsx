@@ -114,7 +114,7 @@ const JobPage = ( { deleteJob } ) => {
 };
 
 const jobLoader = async ( { params } ) => {
-    const res = await fetch(`https://jobs-listing-api.onrender.com/api/jobs/${params.id.toString()}`);
+    const res = await fetch(`https://jobslisting-api.devncreatives.com/api/jobs/${params.id.toString()}`);
     const data = await res.json();
     return data;
 }
